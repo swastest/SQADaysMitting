@@ -35,7 +35,10 @@ dependencies {
             "org.slf4j:slf4j-simple:$slfVersion",
             "io.rest-assured:rest-assured:4.5.1",
             'org.projectlombok:lombok:1.18.10',
-            'com.googlecode.json-simple:json-simple:1.1.1'
+            'com.googlecode.json-simple:json-simple:1.1.1',
+            'io.cucumber:cucumber-java:7.8.0',
+            'io.cucumber:cucumber-junit:7.8.0',
+            'com.codeborne:selenide:6.9.0'
     )
 }
 

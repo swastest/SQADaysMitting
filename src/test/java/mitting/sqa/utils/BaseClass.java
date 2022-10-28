@@ -1,12 +1,12 @@
-package utils;
+package mitting.sqa.utils;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import mitting.sqa.request.RequestBuilder;
+import mitting.sqa.request.RequestExecutor;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.BeforeAll;
-import request.RequestBuilder;
-import request.RequestExecutor;
-import responce.ResponseHandler;
+import mitting.sqa.responce.ResponseHandler;
 
 public class BaseClass {
     public RequestBuilder requestBuilder = new RequestBuilder();

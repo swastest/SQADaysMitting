@@ -1,8 +1,8 @@
-package request;
+package mitting.sqa.request;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
-import static utils.BaseClass.RESPONSE;
+import static mitting.sqa.utils.BaseClass.RESPONSE;
 
 public class RequestExecutor {
     public  void  request(RequestBuilder requestBuilder){

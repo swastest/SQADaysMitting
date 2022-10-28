@@ -1,15 +1,14 @@
-package utils;
+package mitting.sqa.utils;
 
+import mitting.sqa.request.HttpMethods;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static request.HttpMethods.*;
 
 public class TestClass extends BaseClass {
 
     @Test
     void createUser(){
-        requestBuilder.setRequestMethod(POST);
+        requestBuilder.setRequestMethod(HttpMethods.POST);
         requestBody.put("name","TTTT");
         requestBody.put("job","QA");
         requestBuilder.setRequestBody(requestBody);

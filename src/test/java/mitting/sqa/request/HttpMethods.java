@@ -1,4 +1,4 @@
-package request;
+package mitting.sqa.request;
 
 public enum HttpMethods {
     GET,

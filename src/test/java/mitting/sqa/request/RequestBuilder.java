@@ -1,4 +1,4 @@
-package request;
+package mitting.sqa.request;
 
 
 import org.json.simple.JSONObject;
