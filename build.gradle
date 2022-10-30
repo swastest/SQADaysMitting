@@ -10,7 +10,8 @@ def junitVersion = "5.8.2"
 def slfVersion = "1.7.36"
 def fakerVersion = "1.0.2"
 def jacksonVersion = "2.9.5"
-def allureVersion = "2.17.3"
+def allureVersion = "2.17.3",
+        aspectjweaverVersion = "1.9.6"
 
 
 allure {
@@ -38,7 +39,9 @@ dependencies {
             'com.googlecode.json-simple:json-simple:1.1.1',
             'io.cucumber:cucumber-java:7.8.0',
             'io.cucumber:cucumber-junit:7.8.0',
-            'com.codeborne:selenide:6.9.0'
+            'com.codeborne:selenide:6.9.0',
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.aspectj:aspectjweaver:$aspectjweaverVersion",
     )
 }
 
@@ -46,19 +49,17 @@ test {
     useJUnitPlatform()
 }
 
-compileJava {
+tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-compileTestJava {
-    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
-    // добавила эту строчку, чтобы можно было менять конфиги, передавая на входе, это типа швейцара на входе)))
     useJUnitPlatform()
 
-    // чтобы логи были симпатичнее ТОЛЬКО В КОНСОЛЕ у нас (в алюре не используется, там свое)
+
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"

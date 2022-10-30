@@ -3,6 +3,8 @@ package cucumber.steps;
 import cucumber.pages.SingInPage;
 import io.cucumber.java.en.Then;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 public class SingInPageDef {
     SingInPage singInPage = new SingInPage();
     @Then("Ввести в поле логин номер телефона {string}")
@@ -23,5 +25,6 @@ public class SingInPageDef {
     @Then("Проверка ошибки {string}")
     public void checkErrorMessage(String arg0) {
         singInPage.checkErrorAuthMessage(arg0);
+        sleep(5000);
     }
 }
