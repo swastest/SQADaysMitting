@@ -1,14 +1,21 @@
 Feature: Login user
   Everybody wants to know when it's Friday
 
-  Scenario: Login user
+  #То что выполняется до теста
+  Background: Открыта главная страница сайта
+    Given Открыть сайт "https://liveinclean.test.itbrick.ru"
+
+  Scenario: Авторизация юзера
     When Нажать на кнопку Личный кабинет
-    Then Ввести в поле логин номер телефона "9055555555"
-    Then Ввести в поле пароль "1111"
-    Then Нажать на кнопку Войти
+    And Ввести в поле логин номер телефона "9055555555"
+    And Ввести в поле пароль "1111"
+    And Нажать на кнопку Войти
     Then Проверка личного кабинета
 
-#  Scenario: Friday is Friday
-#    Given today is Friday
-#    When I ask whether it's Friday yet
-#    Then I should be told "TGIF"
+  Scenario: Негативная проверка авторизации
+
+    When Нажать на кнопку Личный кабинет
+    And Ввести в поле логин номер телефона "9055555555"
+    And Ввести в поле пароль "1234"
+    And Нажать на кнопку Войти
+    Then Проверка ошибки "Введен неверный номер телефона или пароль"

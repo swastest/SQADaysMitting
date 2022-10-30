@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 public class PersonalAriaPageDef {
     PersonalAriaPage personalAriaPage = new PersonalAriaPage();
     @Then("Проверка личного кабинета")
-    public void проверкаЛичногоКабинета() {
+    public void checkPersonalAriaHeaders() {
         personalAriaPage.checkHeadersPersonalAria(TestDataConfig.headersPersonalAria);
     }
 }

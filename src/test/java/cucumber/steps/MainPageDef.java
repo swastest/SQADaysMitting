@@ -7,7 +7,7 @@ public class MainPageDef {
     MainPage mainPage = new MainPage();
 
     @When("Нажать на кнопку Личный кабинет")
-    public void нажатьНаКнопкуЛичныйКабинет() {
+    public void clickMenuLogin() {
         mainPage.clickMenuLoginButton();
     }
 }
